@@ -3,9 +3,22 @@ var express = require('express'),
     app     = express();
 
 // send our index.html file to the user for the home page
-app.get('/', function(req, res) {
-  res.sendfile(__dirname + '/index.html');
-});
+// app.get('/', function(req, res) {
+//   res.sendfile(__dirname + '/index.html');
+// });
+
+app.route('/login')
+
+  // show the form (GET http:/localhost:1337/login)
+  .get(function(req, res) {
+    res.send('this is the login form');
+  })
+
+  // process the form (POST http://localhost:1337/login)
+  .post(function(req, res) {
+    console.log('processing');
+    res.send('processing the login form!');
+  });
 
 // create routes for the admin section
 
