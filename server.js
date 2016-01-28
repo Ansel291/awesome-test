@@ -12,7 +12,7 @@ app.get('/', function(req, res) {
 // get an instance of the router
 var adminRouter = express.Router();
 
-// route middlware that will happen on ever request
+// route middlware that will happen on every request
 adminRouter.use(function(req, res, next) {
 
   //log each request to the console
@@ -48,5 +48,9 @@ app.use('/admin', adminRouter);
 // start the server
 app.listen(1337);
 console.log('1337 is the magic port!');
+
+
+
+
 
 
